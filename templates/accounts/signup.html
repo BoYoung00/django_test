@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입</title>
+</head>
+<body>
+  {% extends 'base.html' %}
+  {% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+      {% csrf_token %}
+      <!--      {{ form.as_p }} 뷰로부터 전달받을 파라미터를 p태그로 감싸서 랜더링한다-->
+      {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+  </form>
+  {% endblock %}
+</body>
+</html>
